@@ -1,0 +1,36 @@
+{
+  "name": "admin-gateway-sdk",
+  "version": "1.0.0",
+  "description": "K8sCommerce Admin Gateway SDK",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/**/*"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "prepare" : "npm run build",
+    "prepublishOnly" : "",
+    "preversion" : "",
+    "postversion" : "git push && git push --tags",
+    "genapi": "./scripts/genapi.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/k8scommerce/admin-gateway-sdk.git"
+  },
+  "keywords": ["K8sCommerce"],
+  "author": "K8sCommerce",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/k8scommerce/admin-gateway-sdk/issues"
+  },
+  "homepage": "https://github.com/k8scommerce/admin-gateway-sdk#readme",
+  "devDependencies": {},
+  "dependencies": {
+    "@angular/cli": "^13.1.3",
+    "@angular/common": "^13.1.2",
+    "@angular/core": "^13.1.2"
+  }
+}
