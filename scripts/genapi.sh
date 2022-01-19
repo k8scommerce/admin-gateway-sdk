@@ -23,6 +23,12 @@ openapi-generator generate \
 
 perl -pi -e 'BEGIN{undef $/;} s/(return\s+this.httpClient.delete)(.*?)\n\s+body,(.*?);/$1$2$3;/smg' $ROOT/../$dest/api/admin.service.ts
 
+# remove the version number from the README
+perl -pi -e 'BEGIN{undef $/;} s/admin-gateway-sdk@(\d+)\.(\d+)\.(\d+)/admin-gateway-sdk/smg' $ROOT/../README.md
+
+# remove building and publishing info blocks
+perl -pi -e 'BEGIN{undef $/;} s/### Building.*(### consuming)/$1/smg' $ROOT/../README.md
+
 # remove the package-lock.json file
 rm -rf $ROOT/../package-lock.json
 

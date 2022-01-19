@@ -1,16 +1,4 @@
-## @k8scommerce/admin-gateway-sdk@1.0.11
-
-### Building
-
-To install the required dependencies and to build the typescript sources run:
-```
-npm install
-npm run build
-```
-
-### publishing
-
-First build the package then run ```npm publish dist``` (don't forget to specify the `dist` folder!)
+## @k8scommerce/admin-gateway-sdk
 
 ### consuming
 
@@ -19,7 +7,7 @@ Navigate to the folder of your consuming project and run one of next commands.
 _published:_
 
 ```
-npm install @k8scommerce/admin-gateway-sdk@1.0.11 --save
+npm install @k8scommerce/admin-gateway-sdk --save
 ```
 
 _without publishing (not recommended):_
