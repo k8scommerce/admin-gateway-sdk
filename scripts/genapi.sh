@@ -2,13 +2,27 @@
 
 version=$1
 
-orig=https://raw.githubusercontent.com/k8scommerce/k8scommerce/main/docs/swagger/v1/admin.json
-dest=.
+function join {
+    local IFS="$1"
+    shift
+    echo "$*"
+}
 
 # get the root path of the directory this file resides
 # this enables this script to be called from any path
 # https://gist.github.com/olegch/1730673
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
+
+keywords=(
+    "k8scommerce"
+    "angular gateway api"
+    "test2"
+)
+keywords_json=$(printf '%s\n' "${keywords[@]}" | jq -R . | jq -s .)
+
+# set the original and destination vars
+orig=https://raw.githubusercontent.com/k8scommerce/k8scommerce/main/docs/swagger/v1/admin.json
+dest=.
 
 # generate the
 openapi-generator generate \
@@ -18,9 +32,8 @@ openapi-generator generate \
     --additional-properties=platform=browser,npmName=@k8scommerce/admin-gateway-sdk,npmVersion=$version
 
 # currently there is an error in the generator
-# that makes the delete method have 3 params instead of two
+# that makes the delete method has 3 params instead of two
 # let's fix them
-
 perl -pi -e 'BEGIN{undef $/;} s/(return\s+this.httpClient.delete)(.*?)\n\s+body,(.*?);/$1$2$3;/smg' $ROOT/../$dest/api/admin.service.ts
 
 # remove the version number from the README
@@ -28,6 +41,9 @@ perl -pi -e 'BEGIN{undef $/;} s/admin-gateway-sdk@(\d+)\.(\d+)\.(\d+)/admin-gate
 
 # remove building and publishing info blocks
 perl -pi -e 'BEGIN{undef $/;} s/### Building.*(### consuming)/$1/smg' $ROOT/../README.md
+
+# update the package keywords before building
+perl -pi -e "BEGIN{undef $/;} s/(?s)(\"keywords\"\:).*?\]/\$1 $keywords_json/smg" $ROOT/../package.json
 
 # remove the package-lock.json file
 rm -rf $ROOT/../package-lock.json
@@ -40,5 +56,3 @@ $ROOT/gitpush.sh k8scommerce admin-gateway-sdk "update to version ${version}" "g
 
 # publish to npm
 npm publish
-
-

@@ -4,9 +4,10 @@
   "description": "OpenAPI client for @k8scommerce/admin-gateway-sdk",
   "author": "OpenAPI-Generator Contributors",
   "keywords": [
-    "openapi-client",
-    "openapi-generator"
-  ],
+  "k8scommerce",
+  "angular gateway api",
+  "test2"
+],
   "license": "Unlicense",
   "scripts": {
     "build": "ng-packagr -p ng-package.json"
