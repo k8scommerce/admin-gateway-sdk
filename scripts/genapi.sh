@@ -23,6 +23,12 @@ openapi-generator generate \
 
 perl -pi -e 'BEGIN{undef $/;} s/(return\s+this.httpClient.delete)(.*?)\n\s+body,(.*?);/$1$2$3;/smg' $ROOT/../$dest/api/admin.service.ts
 
+# remove the package-lock.json file
+rm -rf $ROOT/../package-lock.json
+
+# run an npm install
+npm i --legacy-peer-deps
+
 # push to github
 $ROOT/gitpush.sh k8scommerce admin-gateway-sdk "update to version ${version}" "github.com"
 
