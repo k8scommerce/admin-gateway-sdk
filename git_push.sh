@@ -8,6 +8,9 @@ git_repo_id=$2
 release_note=$3
 git_host=$4
 
+GIT_USER_ID=k8scommerce
+GIT_REPO_ID=admin-gateway-sdk
+
 if [ "$git_host" = "" ]; then
     git_host="github.com"
     echo "[INFO] No command line input provided. Set \$git_host to $git_host"

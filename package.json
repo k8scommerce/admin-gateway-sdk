@@ -10,7 +10,7 @@
   "license": "Unlicense",
   "scripts": {
     "build": "ng-packagr -p ng-package.json",
-    "push": "./git_push.sh k8scommerce admin-gateway-sdk 'minor update' 'github.com'"
+    "push": "./git_push.sh"
   },
   "peerDependencies": {
     "@angular/core": "^13.0.1",
