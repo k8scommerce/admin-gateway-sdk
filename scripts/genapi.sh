@@ -27,6 +27,6 @@ perl -pi -e 'BEGIN{undef $/;} s/(return\s+this.httpClient.delete)(.*?)\n\s+body,
 $ROOT/gitpush.sh k8scommerce admin-gateway-sdk "update to version ${version}" "github.com"
 
 # publish to npm
-
+npm publish
 
 
