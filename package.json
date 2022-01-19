@@ -1,45 +1,31 @@
 {
   "name": "@k8scommerce/admin-gateway-sdk",
-  "version": "1.0.2",
-  "description": "K8sCommerce Admin Gateway SDK",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
-  "files": [
-    "lib/**/*"
-  ],
-  "scripts": {
-    "generate:api": "./scripts/genapi.sh",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prebuild": "npm run generate:api",
-    "build": "tsc",
-    "prepare": "npm run build",
-    "prepublishOnly": "",
-    "preversion": "",
-    "postversion": "git push && git push --tags"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/k8scommerce/admin-gateway-sdk.git"
-  },
+  "version": "1.0.3",
+  "description": "OpenAPI client for @k8scommerce/admin-gateway-sdk",
+  "author": "OpenAPI-Generator Contributors",
   "keywords": [
-    "K8sCommerce"
+    "openapi-client",
+    "openapi-generator"
   ],
-  "author": "K8sCommerce",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/k8scommerce/admin-gateway-sdk/issues"
+  "license": "Unlicense",
+  "scripts": {
+    "build": "ng-packagr -p ng-package.json",
+    "push": "./git_push.sh k8scommerce admin-gateway-sdk 'minor update' 'github.com'"
   },
-  "homepage": "https://github.com/k8scommerce/admin-gateway-sdk#readme",
+  "peerDependencies": {
+    "@angular/core": "^13.0.1",
+    "rxjs": "^7.4.0"
+  },
   "devDependencies": {
-    "typescript": "^4.5.4"
-  },
-  "dependencies": {
-    "@angular/common": "^13.1.3",
-    "@angular/core": "^13.1.3",
-    "axios": "^0.25.0",
-    "rxjs": "^7.5.2"
-  },
-  "directories": {
-    "lib": "lib"
-  }
-}
+    "@angular/common": "^13.0.1",
+    "@angular/compiler": "^13.0.1",
+    "@angular/compiler-cli": "^13.0.1",
+    "@angular/core": "^13.0.1",
+    "@angular/platform-browser": "^13.0.1",
+    "ng-packagr": "^13.0.3",
+    "reflect-metadata": "^0.1.3",
+    "rxjs": "^7.4.0",
+    "tsickle": "^0.43.0",
+    "typescript": ">=4.4.2 <4.5.0",
+    "zone.js": "^0.11.4"
+  }}

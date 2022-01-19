@@ -1120,6 +1120,7 @@ export class AdminService {
         }
 
         return this.httpClient.post<UserLoginResponse>(`${this.configuration.basePath}/v1/user/login`,
+            body,
             {
                 context: localVarHttpContext,
                 responseType: <any>responseType_,

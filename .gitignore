@@ -1,2 +1,4 @@
+wwwroot/*.js
 node_modules
-/lib
+typings
+dist

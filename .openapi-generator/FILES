@@ -1,4 +1,5 @@
 .gitignore
+.openapi-generator-ignore
 README.md
 api.module.ts
 api/admin.service.ts
@@ -50,4 +51,7 @@ model/user.ts
 model/userLoginRequest.ts
 model/userLoginResponse.ts
 model/variant.ts
+ng-package.json
+package.json
+tsconfig.json
 variables.ts

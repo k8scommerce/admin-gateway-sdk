@@ -1,38 +1,28 @@
 {
-    "compileOnSave": false,
     "compilerOptions": {
-        "outDir": "./lib",
-        "forceConsistentCasingInFileNames": true,
-        "strict": true,
-        "noImplicitOverride": true,
-        "noPropertyAccessFromIndexSignature": true,
-        "noImplicitReturns": true,
-        "noFallthroughCasesInSwitch": true,
-        "sourceMap": true,
-        "declaration": false,
-        "downlevelIteration": true,
+        "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
+        "noImplicitAny": false,
+        "suppressImplicitAnyIndexErrors": true,
+        "target": "es5",
+        "module": "commonjs",
         "moduleResolution": "node",
-        "importHelpers": true,
-        "target": "es2017",
-        "module": "es2020",
-        "lib": [
-            "es2020",
-            "dom"
+        "removeComments": true,
+        "sourceMap": true,
+        "outDir": "./dist",
+        "noLib": false,
+        "declaration": true,
+        "lib": [ "es6", "dom" ],
+        "typeRoots": [
+            "node_modules/@types"
         ]
     },
-    "include": [
-        "src"
-    ],
     "exclude": [
         "node_modules",
-        "**/__tests__/*"
+        "dist"
     ],
-    "angularCompilerOptions": {
-        "enableI18nLegacyMessageIdFormat": false,
-        "strictInjectionParameters": true,
-        "strictInputAccessModifiers": true,
-        "strictTemplates": true,
-        "enableIvy": true
-    }
+    "filesGlob": [
+        "./model/*.ts",
+        "./api/*.ts"
+    ]
 }

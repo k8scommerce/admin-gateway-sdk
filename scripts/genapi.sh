@@ -1,21 +1,21 @@
 #!/bin/bash
 
 orig=https://raw.githubusercontent.com/k8scommerce/k8scommerce/main/docs/swagger/v1/admin.json
-dest=src
+dest=.
 
 # get the root path of the directory this file resides
 # this enables this script to be called from any path
 # https://gist.github.com/olegch/1730673
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 
-# generate the 
+# generate the
 openapi-generator generate \
     -g typescript-angular \
     -i https://raw.githubusercontent.com/k8scommerce/k8scommerce/main/docs/swagger/v1/admin.json \
     -o $ROOT/../$dest \
-    --additional-properties=platform=browser
+    --additional-properties=platform=browser,npmName=@k8scommerce/admin-gateway-sdk,npmVersion=1.0.3
 
-# currently there is an error in the generator 
+# currently there is an error in the generator
 # that makes the delete method have 3 params instead of two
 # let's fix them
 
