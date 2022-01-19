@@ -12,10 +12,25 @@
 
 
 export interface User { 
+    /**
+     *  user id
+     */
     id: number;
+    /**
+     *  first name
+     */
     firstName: string;
+    /**
+     *  last name
+     */
     lastName: string;
+    /**
+     *  email address
+     */
     email: string;
+    /**
+     *  password
+     */
     password: string;
 }
 

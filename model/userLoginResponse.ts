@@ -11,12 +11,12 @@
  */
 import { JwtToken } from './jwtToken';
 import { User } from './user';
+import { ResponseStatus } from './responseStatus';
 
 
 export interface UserLoginResponse { 
     jwt: JwtToken;
     user: User;
-    statusCode: number;
-    statusMessage: string;
+    status: ResponseStatus;
 }
 

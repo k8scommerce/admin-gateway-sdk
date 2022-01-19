@@ -12,7 +12,13 @@
 
 
 export interface UserLoginRequest { 
+    /**
+     *  email address
+     */
     email: string;
+    /**
+     *  password
+     */
     password: string;
 }
 

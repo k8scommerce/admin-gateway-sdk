@@ -12,8 +12,8 @@
 
 
 export interface JwtToken { 
-    access_token: string;
-    access_expire: number;
-    refresh_after: number;
+    accessToken: string;
+    accessExpire: number;
+    refreshAfter: number;
 }
 

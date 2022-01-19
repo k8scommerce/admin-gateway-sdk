@@ -1,6 +1,6 @@
 {
   "name": "@k8scommerce/admin-gateway-sdk",
-  "version": "1.0.8",
+  "version": "1.0.10",
   "description": "OpenAPI client for @k8scommerce/admin-gateway-sdk",
   "author": "OpenAPI-Generator Contributors",
   "keywords": [
@@ -9,8 +9,7 @@
   ],
   "license": "Unlicense",
   "scripts": {
-    "build": "ng-packagr -p ng-package.json",
-    "push": "./git_push.sh"
+    "build": "ng-packagr -p ng-package.json"
   },
   "peerDependencies": {
     "@angular/core": "^13.0.1",
