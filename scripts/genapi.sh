@@ -54,11 +54,8 @@ npm i --legacy-peer-deps
 # build the project
 npm run build
 
-# copy the npmrc file to the dist directory
-cp .npmrc ./dist
-
 # push to github
 $ROOT/gitpush.sh k8scommerce admin-gateway-sdk "update to version ${version}" "github.com"
 
 # publish to npm
-cd ./dist && npm publish
+cd $ROOT/../dist && npm publish && cd $ROOT
