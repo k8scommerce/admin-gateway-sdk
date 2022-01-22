@@ -70,7 +70,7 @@ import { Configuration }                                     from '../configurat
 
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'platform'
 })
 export class AdminService {
 
