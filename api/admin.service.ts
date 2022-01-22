@@ -556,13 +556,20 @@ export class AdminService {
     /**
      * Get All Categories
      * returns all categories belonging to a store
+     * @param sortOn 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public getAllCategories(observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<GetAllCategoriesResponse>;
-    public getAllCategories(observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpResponse<GetAllCategoriesResponse>>;
-    public getAllCategories(observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpEvent<GetAllCategoriesResponse>>;
-    public getAllCategories(observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<any> {
+    public getAllCategories(sortOn?: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<GetAllCategoriesResponse>;
+    public getAllCategories(sortOn?: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpResponse<GetAllCategoriesResponse>>;
+    public getAllCategories(sortOn?: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpEvent<GetAllCategoriesResponse>>;
+    public getAllCategories(sortOn?: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<any> {
+
+        let localVarQueryParameters = new HttpParams({encoder: this.encoder});
+        if (sortOn !== undefined && sortOn !== null) {
+          localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+            <any>sortOn, 'sortOn');
+        }
 
         let localVarHeaders = this.defaultHeaders;
 
@@ -599,6 +606,7 @@ export class AdminService {
         return this.httpClient.get<GetAllCategoriesResponse>(`${this.configuration.basePath}/v1/categories`,
             {
                 context: localVarHttpContext,
+                params: localVarQueryParameters,
                 responseType: <any>responseType_,
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,

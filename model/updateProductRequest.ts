@@ -13,6 +13,7 @@ import { Product } from './product';
 
 
 export interface UpdateProductRequest { 
+    storeId: number;
     pathomitempty: number;
     productomitempty: Product;
 }

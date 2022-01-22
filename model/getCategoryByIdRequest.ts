@@ -12,6 +12,7 @@
 
 
 export interface GetCategoryByIdRequest { 
+    storeId: number;
     id: number;
 }
 

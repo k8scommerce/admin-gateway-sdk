@@ -12,6 +12,7 @@
 
 
 export interface GetProductsByCategoryIdRequest { 
+    storeId: number;
     categoryId: number;
     currentPage: number;
     pageSize: number;

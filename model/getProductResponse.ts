@@ -14,6 +14,7 @@ import { Product } from './product';
 
 
 export interface GetProductResponse { 
+    storeId: number;
     product: Product;
     status: ResponseStatus;
 }

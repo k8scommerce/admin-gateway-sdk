@@ -12,6 +12,7 @@
 
 
 export interface DeleteCategoryRequest { 
+    storeId: number;
     id: number;
 }
 

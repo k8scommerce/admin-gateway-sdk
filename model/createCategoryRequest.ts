@@ -13,6 +13,7 @@ import { Category } from './category';
 
 
 export interface CreateCategoryRequest { 
+    storeId: number;
     category: Category;
 }
 

@@ -13,6 +13,7 @@ import { Product } from './product';
 
 
 export interface CreateProductRequest { 
+    storeId: number;
     productomitempty: Product;
 }
 

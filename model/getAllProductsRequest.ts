@@ -12,6 +12,7 @@
 
 
 export interface GetAllProductsRequest { 
+    storeId: number;
     currentPage: number;
     pageSize: number;
     sortOn: string;

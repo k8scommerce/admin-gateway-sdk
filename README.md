@@ -1,4 +1,4 @@
-## @k8scommerce/admin-gateway-sdk
+## @k8scommerce/admin-gateway-sdk@
 
 ### consuming
 
@@ -7,7 +7,7 @@ Navigate to the folder of your consuming project and run one of next commands.
 _published:_
 
 ```
-npm install @k8scommerce/admin-gateway-sdk --save
+npm install @k8scommerce/admin-gateway-sdk@ --save
 ```
 
 _without publishing (not recommended):_

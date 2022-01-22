@@ -14,6 +14,7 @@ export * from './deleteCategoryRequest';
 export * from './deleteCategoryResponse';
 export * from './deleteProductRequest';
 export * from './deleteProductResponse';
+export * from './getAllCategoriesRequest';
 export * from './getAllCategoriesResponse';
 export * from './getAllProductsRequest';
 export * from './getAllProductsResponse';

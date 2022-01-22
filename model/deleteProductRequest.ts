@@ -12,6 +12,7 @@
 
 
 export interface DeleteProductRequest { 
+    storeId: number;
     pathomitempty: number;
 }
 

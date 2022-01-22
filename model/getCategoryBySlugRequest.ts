@@ -12,6 +12,7 @@
 
 
 export interface GetCategoryBySlugRequest { 
+    storeId: number;
     /**
      *  slug name of the category
      */

@@ -11,8 +11,10 @@
  */
 
 
-export interface GetProductBySkuRequest { 
+export interface GetAllCategoriesRequest { 
     storeId: number;
-    sku: string;
+    currentPage: number;
+    pageSize: number;
+    sortOn?: string;
 }
 
