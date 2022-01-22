@@ -51,8 +51,11 @@ rm -rf $ROOT/../package-lock.json
 # run an npm install
 npm i --legacy-peer-deps
 
+# build the project
+npm run build
+
 # push to github
 $ROOT/gitpush.sh k8scommerce admin-gateway-sdk "update to version ${version}" "github.com"
 
 # publish to npm
-npm publish
+cd ./dist && npm publish
