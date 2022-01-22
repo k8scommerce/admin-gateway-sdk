@@ -9,12 +9,10 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { ResponseStatus } from './responseStatus';
 import { Product } from './product';
 
 
 export interface UpdateProductResponse { 
     productomitempty: Product;
-    status: ResponseStatus;
 }
 

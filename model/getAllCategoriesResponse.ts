@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 import { Category } from './category';
-import { ResponseStatus } from './responseStatus';
 
 
 export interface GetAllCategoriesResponse { 
@@ -18,6 +17,7 @@ export interface GetAllCategoriesResponse {
      *  a collection of Category
      */
     categories: Array<Category>;
-    status: ResponseStatus;
+    totalRecords: number;
+    totalPages: number;
 }
 

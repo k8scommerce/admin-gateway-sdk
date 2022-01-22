@@ -10,11 +10,9 @@
  * Do not edit the class manually.
  */
 import { Category } from './category';
-import { ResponseStatus } from './responseStatus';
 
 
 export interface UpdateCategoryResponse { 
     category: Category;
-    status: ResponseStatus;
 }
 

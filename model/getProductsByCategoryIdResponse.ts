@@ -9,7 +9,6 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { ResponseStatus } from './responseStatus';
 import { Product } from './product';
 
 
@@ -17,6 +16,5 @@ export interface GetProductsByCategoryIdResponse {
     products: Array<Product>;
     totalRecords: number;
     totalPages: number;
-    status: ResponseStatus;
 }
 

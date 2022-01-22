@@ -37,11 +37,7 @@ import { CustomerLoginResponse } from '../model/customerLoginResponse';
 // @ts-ignore
 import { DeleteCategoryRequest } from '../model/deleteCategoryRequest';
 // @ts-ignore
-import { DeleteCategoryResponse } from '../model/deleteCategoryResponse';
-// @ts-ignore
 import { DeleteProductRequest } from '../model/deleteProductRequest';
-// @ts-ignore
-import { DeleteProductResponse } from '../model/deleteProductResponse';
 // @ts-ignore
 import { GetAllCategoriesResponse } from '../model/getAllCategoriesResponse';
 // @ts-ignore
@@ -417,9 +413,9 @@ export class AdminService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public deleteCategory(id: string, body: DeleteCategoryRequest, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<DeleteCategoryResponse>;
-    public deleteCategory(id: string, body: DeleteCategoryRequest, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpResponse<DeleteCategoryResponse>>;
-    public deleteCategory(id: string, body: DeleteCategoryRequest, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpEvent<DeleteCategoryResponse>>;
+    public deleteCategory(id: string, body: DeleteCategoryRequest, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<object>;
+    public deleteCategory(id: string, body: DeleteCategoryRequest, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpResponse<object>>;
+    public deleteCategory(id: string, body: DeleteCategoryRequest, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpEvent<object>>;
     public deleteCategory(id: string, body: DeleteCategoryRequest, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<any> {
         if (id === null || id === undefined) {
             throw new Error('Required parameter id was null or undefined when calling deleteCategory.');
@@ -469,7 +465,7 @@ export class AdminService {
             responseType_ = 'text';
         }
 
-        return this.httpClient.delete<DeleteCategoryResponse>(`${this.configuration.basePath}/v1/category/${encodeURIComponent(String(id))}`,
+        return this.httpClient.delete<object>(`${this.configuration.basePath}/v1/category/${encodeURIComponent(String(id))}`,
             {
                 context: localVarHttpContext,
                 responseType: <any>responseType_,
@@ -489,9 +485,9 @@ export class AdminService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public deleteProduct(id: string, body: DeleteProductRequest, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<DeleteProductResponse>;
-    public deleteProduct(id: string, body: DeleteProductRequest, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpResponse<DeleteProductResponse>>;
-    public deleteProduct(id: string, body: DeleteProductRequest, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpEvent<DeleteProductResponse>>;
+    public deleteProduct(id: string, body: DeleteProductRequest, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<object>;
+    public deleteProduct(id: string, body: DeleteProductRequest, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpResponse<object>>;
+    public deleteProduct(id: string, body: DeleteProductRequest, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpEvent<object>>;
     public deleteProduct(id: string, body: DeleteProductRequest, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<any> {
         if (id === null || id === undefined) {
             throw new Error('Required parameter id was null or undefined when calling deleteProduct.');
@@ -541,7 +537,7 @@ export class AdminService {
             responseType_ = 'text';
         }
 
-        return this.httpClient.delete<DeleteProductResponse>(`${this.configuration.basePath}/v1/product/${encodeURIComponent(String(id))}`,
+        return this.httpClient.delete<object>(`${this.configuration.basePath}/v1/product/${encodeURIComponent(String(id))}`,
             {
                 context: localVarHttpContext,
                 responseType: <any>responseType_,
@@ -556,14 +552,26 @@ export class AdminService {
     /**
      * Get All Categories
      * returns all categories belonging to a store
+     * @param storeId 
+     * @param currentPage 
+     * @param pageSize 
      * @param sortOn 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public getAllCategories(sortOn?: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<GetAllCategoriesResponse>;
-    public getAllCategories(sortOn?: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpResponse<GetAllCategoriesResponse>>;
-    public getAllCategories(sortOn?: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpEvent<GetAllCategoriesResponse>>;
-    public getAllCategories(sortOn?: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<any> {
+    public getAllCategories(storeId: string, currentPage: string, pageSize: string, sortOn?: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<GetAllCategoriesResponse>;
+    public getAllCategories(storeId: string, currentPage: string, pageSize: string, sortOn?: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpResponse<GetAllCategoriesResponse>>;
+    public getAllCategories(storeId: string, currentPage: string, pageSize: string, sortOn?: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpEvent<GetAllCategoriesResponse>>;
+    public getAllCategories(storeId: string, currentPage: string, pageSize: string, sortOn?: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<any> {
+        if (storeId === null || storeId === undefined) {
+            throw new Error('Required parameter storeId was null or undefined when calling getAllCategories.');
+        }
+        if (currentPage === null || currentPage === undefined) {
+            throw new Error('Required parameter currentPage was null or undefined when calling getAllCategories.');
+        }
+        if (pageSize === null || pageSize === undefined) {
+            throw new Error('Required parameter pageSize was null or undefined when calling getAllCategories.');
+        }
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
         if (sortOn !== undefined && sortOn !== null) {
@@ -603,7 +611,7 @@ export class AdminService {
             responseType_ = 'text';
         }
 
-        return this.httpClient.get<GetAllCategoriesResponse>(`${this.configuration.basePath}/v1/categories`,
+        return this.httpClient.get<GetAllCategoriesResponse>(`${this.configuration.basePath}/v1/categories/${encodeURIComponent(String(storeId))}/${encodeURIComponent(String(currentPage))}/${encodeURIComponent(String(pageSize))}`,
             {
                 context: localVarHttpContext,
                 params: localVarQueryParameters,

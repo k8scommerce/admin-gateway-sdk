@@ -20,9 +20,7 @@ model/customerAccount.ts
 model/customerLoginRequest.ts
 model/customerLoginResponse.ts
 model/deleteCategoryRequest.ts
-model/deleteCategoryResponse.ts
 model/deleteProductRequest.ts
-model/deleteProductResponse.ts
 model/getAllCategoriesRequest.ts
 model/getAllCategoriesResponse.ts
 model/getAllProductsRequest.ts
