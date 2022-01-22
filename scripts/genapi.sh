@@ -58,4 +58,4 @@ npm run build
 $ROOT/gitpush.sh k8scommerce admin-gateway-sdk "update to version ${version}" "github.com"
 
 # publish to npm
-cd ./dist && npm publish
+npm publish
