@@ -1,0 +1,18 @@
+{
+  "name": "@k8scommerce/admin-gateway-sdk",
+  "description": "OpenAPI client for @k8scommerce/admin-gateway-sdk",
+  "author": "K8sCommerce",
+  "license": "MIT",
+  "keywords": [
+    "k8scommerce",
+    "admin gateway api"
+  ],
+  "version": "1.0.29",
+  "peerDependencies": {
+    "@angular/common": "^13.1.0",
+    "@angular/core": "^13.1.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}

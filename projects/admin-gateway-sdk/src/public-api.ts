@@ -1,5 +1,5 @@
 /*
- * Public API Surface of admin-api
+ * Public API Surface of admin-gateway-sdk
  */
 
 export * from './lib/guards/index';

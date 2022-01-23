@@ -1,6 +1,13 @@
 {
-  "name": "admin-gateway-sdk",
-  "version": "1.0.28",
+  "name": "@k8scommerce/admin-gateway-sdk",
+  "description": "OpenAPI client for @k8scommerce/admin-gateway-sdk",
+  "author": "K8sCommerce",
+  "license": "MIT",
+  "keywords": [
+    "k8scommerce",
+    "admin gateway api"
+  ],
+  "version": "1.0.29",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

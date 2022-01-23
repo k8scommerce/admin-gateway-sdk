@@ -22,7 +22,7 @@ export class GuardedAdminAPIClient extends AdminAPIClient {
     super(httpClient, domain, options);
   }
 
-  override getAllCategories(
+  getAllCategories(
     args: {
       storeId: string,
       currentPage: string,
@@ -35,7 +35,7 @@ export class GuardedAdminAPIClient extends AdminAPIClient {
       .pipe(tap((res: any) => guards.isGetAllCategoriesResponse(res) || console.error(`TypeGuard for response 'GetAllCategoriesResponse' caught inconsistency.`, res)));
   }
 
-  override createCategory(
+  createCategory(
     args: {
       body: models.CreateCategoryRequest,
     },
@@ -45,7 +45,7 @@ export class GuardedAdminAPIClient extends AdminAPIClient {
       .pipe(tap((res: any) => guards.isCreateCategoryResponse(res) || console.error(`TypeGuard for response 'CreateCategoryResponse' caught inconsistency.`, res)));
   }
 
-  override getCategoryBySlug(
+  getCategoryBySlug(
     args: {
       slug: string,  // category slug
     },
@@ -55,7 +55,7 @@ export class GuardedAdminAPIClient extends AdminAPIClient {
       .pipe(tap((res: any) => guards.isGetCategoryBySlugResponse(res) || console.error(`TypeGuard for response 'GetCategoryBySlugResponse' caught inconsistency.`, res)));
   }
 
-  override getCategoryById(
+  getCategoryById(
     args: {
       id: string,  // category id
     },
@@ -65,7 +65,7 @@ export class GuardedAdminAPIClient extends AdminAPIClient {
       .pipe(tap((res: any) => guards.isGetCategoryByIdResponse(res) || console.error(`TypeGuard for response 'GetCategoryByIdResponse' caught inconsistency.`, res)));
   }
 
-  override deleteCategory(
+  deleteCategory(
     args: {
       id: string,  // category id
       body: models.DeleteCategoryRequest,
@@ -76,7 +76,7 @@ export class GuardedAdminAPIClient extends AdminAPIClient {
       .pipe(tap((res: any) => guards.isDeleteCategoryResponse(res) || console.error(`TypeGuard for response 'DeleteCategoryResponse' caught inconsistency.`, res)));
   }
 
-  override updateCategory(
+  updateCategory(
     args: {
       id: string,  // category id
       body: models.UpdateCategoryRequest,
@@ -87,7 +87,7 @@ export class GuardedAdminAPIClient extends AdminAPIClient {
       .pipe(tap((res: any) => guards.isUpdateCategoryResponse(res) || console.error(`TypeGuard for response 'UpdateCategoryResponse' caught inconsistency.`, res)));
   }
 
-  override createCustomer(
+  createCustomer(
     args: {
       body: models.CreateCustomerRequest,
     },
@@ -97,7 +97,7 @@ export class GuardedAdminAPIClient extends AdminAPIClient {
       .pipe(tap((res: any) => guards.isCreateCustomerResponse(res) || console.error(`TypeGuard for response 'CreateCustomerResponse' caught inconsistency.`, res)));
   }
 
-  override customerLogin(
+  customerLogin(
     args: {
       body: models.CustomerLoginRequest,
     },
@@ -107,7 +107,7 @@ export class GuardedAdminAPIClient extends AdminAPIClient {
       .pipe(tap((res: any) => guards.isCustomerLoginResponse(res) || console.error(`TypeGuard for response 'CustomerLoginResponse' caught inconsistency.`, res)));
   }
 
-  override createProduct(
+  createProduct(
     args: {
       body: models.CreateProductRequest,
     },
@@ -117,7 +117,7 @@ export class GuardedAdminAPIClient extends AdminAPIClient {
       .pipe(tap((res: any) => guards.isCreateProductResponse(res) || console.error(`TypeGuard for response 'CreateProductResponse' caught inconsistency.`, res)));
   }
 
-  override getProductBySku(
+  getProductBySku(
     args: {
       sku: string,  // product sku
     },
@@ -127,7 +127,7 @@ export class GuardedAdminAPIClient extends AdminAPIClient {
       .pipe(tap((res: any) => guards.isGetProductResponse(res) || console.error(`TypeGuard for response 'GetProductResponse' caught inconsistency.`, res)));
   }
 
-  override getProductBySlug(
+  getProductBySlug(
     args: {
       slug: string,  // product slug
     },
@@ -137,7 +137,7 @@ export class GuardedAdminAPIClient extends AdminAPIClient {
       .pipe(tap((res: any) => guards.isGetProductResponse(res) || console.error(`TypeGuard for response 'GetProductResponse' caught inconsistency.`, res)));
   }
 
-  override getProductById(
+  getProductById(
     args: {
       id: string,  // product id
     },
@@ -147,7 +147,7 @@ export class GuardedAdminAPIClient extends AdminAPIClient {
       .pipe(tap((res: any) => guards.isGetProductResponse(res) || console.error(`TypeGuard for response 'GetProductResponse' caught inconsistency.`, res)));
   }
 
-  override deleteProduct(
+  deleteProduct(
     args: {
       id: string,  // product id
       body: models.DeleteProductRequest,
@@ -158,7 +158,7 @@ export class GuardedAdminAPIClient extends AdminAPIClient {
       .pipe(tap((res: any) => guards.isDeleteProductResponse(res) || console.error(`TypeGuard for response 'DeleteProductResponse' caught inconsistency.`, res)));
   }
 
-  override updateProduct(
+  updateProduct(
     args: {
       id: string,  // product id
       body: models.UpdateProductRequest,
@@ -169,7 +169,7 @@ export class GuardedAdminAPIClient extends AdminAPIClient {
       .pipe(tap((res: any) => guards.isUpdateProductResponse(res) || console.error(`TypeGuard for response 'UpdateProductResponse' caught inconsistency.`, res)));
   }
 
-  override getProductsByCategoryId(
+  getProductsByCategoryId(
     args: {
       categoryId: string,  // category id
       currentPage: string,  // current page number
@@ -182,7 +182,7 @@ export class GuardedAdminAPIClient extends AdminAPIClient {
       .pipe(tap((res: any) => guards.isGetProductsByCategoryIdResponse(res) || console.error(`TypeGuard for response 'GetProductsByCategoryIdResponse' caught inconsistency.`, res)));
   }
 
-  override getAllProducts(
+  getAllProducts(
     args: {
       currentPage: string,  // current page number
       pageSize: string,  // number of records per page
@@ -194,7 +194,7 @@ export class GuardedAdminAPIClient extends AdminAPIClient {
       .pipe(tap((res: any) => guards.isGetAllProductsResponse(res) || console.error(`TypeGuard for response 'GetAllProductsResponse' caught inconsistency.`, res)));
   }
 
-  override login(
+  login(
     args: {
       body: models.UserLoginRequest,
     },

@@ -3,23 +3,23 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "admin-api": {
+    "@k8scommerce/admin-gateway-sdk": {
       "projectType": "library",
-      "root": "projects/admin-api",
-      "sourceRoot": "projects/admin-api/src",
+      "root": "projects/admin-gateway-sdk",
+      "sourceRoot": "projects/admin-gateway-sdk/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/admin-api/ng-package.json"
+            "project": "projects/admin-gateway-sdk/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/admin-api/tsconfig.lib.prod.json"
+              "tsConfig": "projects/admin-gateway-sdk/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/admin-api/tsconfig.lib.json"
+              "tsConfig": "projects/admin-gateway-sdk/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -27,13 +27,13 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/admin-api/src/test.ts",
-            "tsConfig": "projects/admin-api/tsconfig.spec.json",
-            "karmaConfig": "projects/admin-api/karma.conf.js"
+            "main": "projects/admin-gateway-sdk/src/test.ts",
+            "tsConfig": "projects/admin-gateway-sdk/tsconfig.spec.json",
+            "karmaConfig": "projects/admin-gateway-sdk/karma.conf.js"
           }
         }
       }
     }
   },
-  "defaultProject": "admin-api"
+  "defaultProject": "@k8scommerce/admin-gateway-sdk"
 }

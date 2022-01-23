@@ -21,7 +21,7 @@ keywords_json=$(printf '%s\n' "${keywords[@]}" | jq -R . | jq -s .)
 
 # set the original and destination vars
 orig=https://raw.githubusercontent.com/k8scommerce/k8scommerce/main/docs/swagger/v1/admin.json
-dest=$ROOT/../projects/admin-api/src/lib/
+dest=$ROOT/../projects/admin-gateway-sdk/src/lib/
 # # npm i ng-openapi-gen -g
 
 # remove the dist directory
@@ -31,16 +31,9 @@ rm -rf $ROOT/../dist
 
 npx api-client-generator -t all -s $orig -o $dest
 
-# currently there is an error in the generator
-# and it's missing the keyword override before some extended methods
-perl -pi -e 'BEGIN{undef $/;} s/^(\s{2})(?!constructor)([a-zA-Z]+?\()/$1override $2/smg' $dest/services/admin/guarded-admin-api-client.service.ts
-
-# update the package keywords before building
-# perl -pi -e "BEGIN{undef $/;} s/(?s)(\"keywords\"\:).*?\]/\$1 $keywords_json/smg" $ROOT/../dist/package.json
-
 # add the version number to the newly created package.json
 perl -pi -e "BEGIN{undef $/;} s/\"version\": \"\d+\.\d+\.\d+\",/\"version\": \"$version\",/smg" $ROOT/../package.json
-perl -pi -e "BEGIN{undef $/;} s/\"version\": \"\d+\.\d+\.\d+\",/\"version\": \"$version\",/smg" $ROOT/../projects/admin-api/package.json
+perl -pi -e "BEGIN{undef $/;} s/\"version\": \"\d+\.\d+\.\d+\",/\"version\": \"$version\",/smg" $ROOT/../projects/admin-gateway-sdk/package.json
 
 # remove the package-lock.json file
 rm -rf $ROOT/../package-lock.json
@@ -48,8 +41,8 @@ rm -rf $ROOT/../package-lock.json
 # build the project
 npm run build
 
-# # push to github
+# push to github
 $ROOT/gitpush.sh k8scommerce admin-gateway-sdk "update to version ${version}" "github.com"
 
-# # publish to npm
+# publish to npm
 # cd $ROOT/../dist && npm publish && cd $ROOT

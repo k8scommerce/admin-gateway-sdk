@@ -3,9 +3,9 @@
   "compileOnSave": false,
   "compilerOptions": {
     "paths": {
-      "admin-api": [
-        "dist/admin-api/admin-api",
-        "dist/admin-api"
+      "admin-gateway-sdk": [
+        "dist/admin-gateway-sdk/admin-gateway-sdk",
+        "dist/admin-gateway-sdk"
       ]
     },
     "baseUrl": "./",
