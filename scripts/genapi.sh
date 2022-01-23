@@ -15,8 +15,7 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 
 keywords=(
     "k8scommerce"
-    "angular gateway api"
-    "test2"
+    "admin gateway api"
 )
 keywords_json=$(printf '%s\n' "${keywords[@]}" | jq -R . | jq -s .)
 

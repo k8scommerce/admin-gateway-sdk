@@ -1,12 +1,11 @@
 {
   "name": "@k8scommerce/admin-gateway-sdk",
-  "version": "1.0.21",
+  "version": "1.0.22",
   "description": "OpenAPI client for @k8scommerce/admin-gateway-sdk",
   "author": "OpenAPI-Generator Contributors",
   "keywords": [
   "k8scommerce",
-  "angular gateway api",
-  "test2"
+  "admin gateway api"
 ],
   "license": "Unlicense",
   "scripts": {
