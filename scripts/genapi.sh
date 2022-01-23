@@ -28,7 +28,7 @@ openapi-generator generate \
     -g typescript-angular \
     -i https://raw.githubusercontent.com/k8scommerce/k8scommerce/main/docs/swagger/v1/admin.json \
     -o $ROOT/../$dest \
-    --additional-properties=platform=browser,npmName=@k8scommerce/admin-gateway-sdk,npmVersion=$version,providedIn=platform
+    --additional-properties=platform=browser,npmName=@k8scommerce/admin-gateway-sdk,npmVersion=$version,providedIn=root
 
 # currently there is an error in the generator
 # that makes the delete method has 3 params instead of two
