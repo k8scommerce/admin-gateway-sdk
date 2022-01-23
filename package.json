@@ -1,6 +1,6 @@
 {
   "name": "@k8scommerce/admin-gateway-sdk",
-  "version": "1.0.23",
+  "version": "1.0.24",
   "description": "OpenAPI client for @k8scommerce/admin-gateway-sdk",
   "author": "OpenAPI-Generator Contributors",
   "keywords": [
