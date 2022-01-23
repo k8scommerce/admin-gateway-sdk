@@ -21,40 +21,35 @@ keywords_json=$(printf '%s\n' "${keywords[@]}" | jq -R . | jq -s .)
 
 # set the original and destination vars
 orig=https://raw.githubusercontent.com/k8scommerce/k8scommerce/main/docs/swagger/v1/admin.json
-dest=.
+dest=$ROOT/../projects/admin-api/src/lib/
+# # npm i ng-openapi-gen -g
 
-# generate the
-openapi-generator generate \
-    -g typescript-angular \
-    -i https://raw.githubusercontent.com/k8scommerce/k8scommerce/main/docs/swagger/v1/admin.json \
-    -o $ROOT/../$dest \
-    --additional-properties=platform=browser,npmName=@k8scommerce/admin-gateway-sdk,npmVersion=$version,providedIn=platform
+# remove the dist directory
+rm -rf $ROOT/../dist
+
+# ng-openapi-gen --input $orig --output ./out --ignoreUnusedModels=true
+
+npx api-client-generator -t all -s $orig -o $dest
 
 # currently there is an error in the generator
-# that makes the delete method has 3 params instead of two
-# let's fix them
-perl -pi -e 'BEGIN{undef $/;} s/(return\s+this.httpClient.delete)(.*?)\n\s+body,(.*?);/$1$2$3;/smg' $ROOT/../$dest/api/admin.service.ts
-
-# remove the version number from the README
-perl -pi -e 'BEGIN{undef $/;} s/admin-gateway-sdk@(\d+)\.(\d+)\.(\d+)/admin-gateway-sdk/smg' $ROOT/../README.md
-
-# remove building and publishing info blocks
-perl -pi -e 'BEGIN{undef $/;} s/### Building.*(### consuming)/$1/smg' $ROOT/../README.md
+# and it's missing the keyword override before some extended methods
+perl -pi -e 'BEGIN{undef $/;} s/^(\s{2})(?!constructor)([a-zA-Z]+?\()/$1override $2/smg' $dest/services/admin/guarded-admin-api-client.service.ts
 
 # update the package keywords before building
-perl -pi -e "BEGIN{undef $/;} s/(?s)(\"keywords\"\:).*?\]/\$1 $keywords_json/smg" $ROOT/../package.json
+# perl -pi -e "BEGIN{undef $/;} s/(?s)(\"keywords\"\:).*?\]/\$1 $keywords_json/smg" $ROOT/../dist/package.json
+
+# add the version number to the newly created package.json
+perl -pi -e "BEGIN{undef $/;} s/\"version\": \"\d+\.\d+\.\d+\",/\"version\": \"$version\",/smg" $ROOT/../package.json
+perl -pi -e "BEGIN{undef $/;} s/\"version\": \"\d+\.\d+\.\d+\",/\"version\": \"$version\",/smg" $ROOT/../projects/admin-api/package.json
 
 # remove the package-lock.json file
 rm -rf $ROOT/../package-lock.json
 
-# run an npm install
-npm i --legacy-peer-deps
-
 # build the project
 npm run build
 
-# push to github
+# # push to github
 $ROOT/gitpush.sh k8scommerce admin-gateway-sdk "update to version ${version}" "github.com"
 
-# publish to npm
-cd $ROOT/../dist && npm publish && cd $ROOT
+# # publish to npm
+# cd $ROOT/../dist && npm publish && cd $ROOT
