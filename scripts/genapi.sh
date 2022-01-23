@@ -31,6 +31,10 @@ rm -rf $ROOT/../dist
 
 npx api-client-generator -t all -s $orig -o $dest
 
+# currently there is an error in the generator
+# and it's missing the keyword override before some extended methods
+perl -pi -e 'BEGIN{undef $/;} s/^(\s{2})(?!constructor)([a-zA-Z]+?\()/$1override $2/smg' $dest/services/admin/guarded-admin-api-client.service.ts
+
 # add the version number to the newly created package.json
 perl -pi -e "BEGIN{undef $/;} s/\"version\": \"\d+\.\d+\.\d+\",/\"version\": \"$version\",/smg" $ROOT/../package.json
 perl -pi -e "BEGIN{undef $/;} s/\"version\": \"\d+\.\d+\.\d+\",/\"version\": \"$version\",/smg" $ROOT/../projects/admin-gateway-sdk/package.json
@@ -44,5 +48,5 @@ npm run build
 # push to github
 $ROOT/gitpush.sh k8scommerce admin-gateway-sdk "update to version ${version}" "github.com"
 
-# publish to npm
+# # publish to npm
 # cd $ROOT/../dist && npm publish && cd $ROOT
