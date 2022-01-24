@@ -1,6 +1,7 @@
 /* tslint:disable */
 
 export interface Category {
+  depth: number;  //  category level depth
   description: string;  //  description of category
   id: number;  //  category id
   metaDescription: string;  //  metatag description for SEO

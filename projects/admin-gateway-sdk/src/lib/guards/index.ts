@@ -39,6 +39,8 @@ export function isCategory(arg: any): arg is models.Category {
   return (
   arg != null &&
   typeof arg === 'object' &&
+    // depth: number
+    ( typeof arg.depth === 'number' ) &&
     // description: string
     ( typeof arg.description === 'string' ) &&
     // id: number
