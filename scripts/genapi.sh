@@ -27,7 +27,7 @@ dest=$ROOT/../projects/admin-gateway-sdk/src/lib/
 # remove the dist directory
 rm -rf $ROOT/../dist
 
-# ng-openapi-gen --input $orig --output ./out --ignoreUnusedModels=true
+ng-openapi-gen --input $orig --output ./out --ignoreUnusedModels=true
 
 npx api-client-generator -t all -s $orig -o $dest
 
