@@ -21,13 +21,18 @@ keywords_json=$(printf '%s\n' "${keywords[@]}" | jq -R . | jq -s .)
 
 # set the original and destination vars
 orig=https://raw.githubusercontent.com/k8scommerce/k8scommerce/main/docs/swagger/v1/admin.json
-dest=$ROOT/../projects/admin-gateway-sdk/src/
+dest=$ROOT/../projects/admin-gateway-sdk/src/lib/
 # # npm i ng-openapi-gen -g
 
 # remove the dist directory
 rm -rf $ROOT/../dist
 
+# generate for angular
 openapi --input $orig --output $dest --client angular
+
+# add the version number to the newly created package.json
+perl -pi -e "BEGIN{undef $/;} s/\"version\": \"\d+\.\d+\.\d+\",/\"version\": \"$version\",/smg" $ROOT/../package.json
+perl -pi -e "BEGIN{undef $/;} s/\"version\": \"\d+\.\d+\.\d+\",/\"version\": \"$version\",/smg" $ROOT/../projects/admin-gateway-sdk/package.json
 
 # remove the package-lock.json file
 rm -rf $ROOT/../package-lock.json
