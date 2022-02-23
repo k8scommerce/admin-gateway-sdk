@@ -5,5 +5,4 @@ import {
 
 export interface CreateCategoryRequest {
   category: Category;
-  storeId: number;
 }

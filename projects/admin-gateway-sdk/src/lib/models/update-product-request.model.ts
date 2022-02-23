@@ -4,7 +4,6 @@ import {
 } from '.';
 
 export interface UpdateProductRequest {
-  'path:omitempty': number;
-  'product:omitempty': Product;
-  storeId: number;
+  path: number;
+  product: Product;
 }

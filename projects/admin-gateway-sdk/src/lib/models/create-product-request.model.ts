@@ -4,6 +4,5 @@ import {
 } from '.';
 
 export interface CreateProductRequest {
-  'product:omitempty': Product;
-  storeId: number;
+  product: Product;
 }

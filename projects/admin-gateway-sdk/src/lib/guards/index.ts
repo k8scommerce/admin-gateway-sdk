@@ -35,49 +35,57 @@ export function isAddress(arg: any): arg is models.Address {
   );
   }
 
+export function isAsset(arg: any): arg is models.Asset {
+  return (
+  arg != null &&
+  typeof arg === 'object' &&
+    // id?: number
+    ( typeof arg.id === 'undefined' || typeof arg.id === 'number' ) &&
+    // kind: string
+    ( typeof arg.kind === 'string' ) &&
+    // name?: string
+    ( typeof arg.name === 'undefined' || typeof arg.name === 'string' ) &&
+    // productId?: number
+    ( typeof arg.productId === 'undefined' || typeof arg.productId === 'number' ) &&
+    // url?: string
+    ( typeof arg.url === 'undefined' || typeof arg.url === 'string' ) &&
+    // variantId?: number
+    ( typeof arg.variantId === 'undefined' || typeof arg.variantId === 'number' ) &&
+
+  true
+  );
+  }
+
 export function isCategory(arg: any): arg is models.Category {
   return (
   arg != null &&
   typeof arg === 'object' &&
-    // depth: number
-    ( typeof arg.depth === 'number' ) &&
-    // description: string
-    ( typeof arg.description === 'string' ) &&
+    // depth?: number
+    ( typeof arg.depth === 'undefined' || typeof arg.depth === 'number' ) &&
+    // description?: string
+    ( typeof arg.description === 'undefined' || typeof arg.description === 'string' ) &&
     // id: number
     ( typeof arg.id === 'number' ) &&
-    // metaDescription: string
-    ( typeof arg.metaDescription === 'string' ) &&
-    // metaKeywords: string
-    ( typeof arg.metaKeywords === 'string' ) &&
-    // metaTitle: string
-    ( typeof arg.metaTitle === 'string' ) &&
+    // metaDescription?: string
+    ( typeof arg.metaDescription === 'undefined' || typeof arg.metaDescription === 'string' ) &&
+    // metaKeywords?: string
+    ( typeof arg.metaKeywords === 'undefined' || typeof arg.metaKeywords === 'string' ) &&
+    // metaTitle?: string
+    ( typeof arg.metaTitle === 'undefined' || typeof arg.metaTitle === 'string' ) &&
     // name: string
     ( typeof arg.name === 'string' ) &&
-    // parentId: number
-    ( typeof arg.parentId === 'number' ) &&
+    // parentId?: number
+    ( typeof arg.parentId === 'undefined' || typeof arg.parentId === 'number' ) &&
     // slug: string
     ( typeof arg.slug === 'string' ) &&
-    // sortOrder: number
-    ( typeof arg.sortOrder === 'number' ) &&
+    // sortOrder?: number
+    ( typeof arg.sortOrder === 'undefined' || typeof arg.sortOrder === 'number' ) &&
 
   true
   );
   }
 
 export function isCreateCategoryRequest(arg: any): arg is models.CreateCategoryRequest {
-  return (
-  arg != null &&
-  typeof arg === 'object' &&
-    // category: Category
-    ( isCategory(arg.category) ) &&
-    // storeId: number
-    ( typeof arg.storeId === 'number' ) &&
-
-  true
-  );
-  }
-
-export function isCreateCategoryResponse(arg: any): arg is models.CreateCategoryResponse {
   return (
   arg != null &&
   typeof arg === 'object' &&
@@ -116,21 +124,8 @@ export function isCreateProductRequest(arg: any): arg is models.CreateProductReq
   return (
   arg != null &&
   typeof arg === 'object' &&
-    // 'product:omitempty': Product
-    ( isProduct(arg['product:omitempty']) ) &&
-    // storeId: number
-    ( typeof arg.storeId === 'number' ) &&
-
-  true
-  );
-  }
-
-export function isCreateProductResponse(arg: any): arg is models.CreateProductResponse {
-  return (
-  arg != null &&
-  typeof arg === 'object' &&
-    // 'product:omitempty': Product
-    ( isProduct(arg['product:omitempty']) ) &&
+    // product: Product
+    ( isProduct(arg.product) ) &&
 
   true
   );
@@ -148,8 +143,8 @@ export function isCustomer(arg: any): arg is models.Customer {
     ( typeof arg.id === 'number' ) &&
     // lastName: string
     ( typeof arg.lastName === 'string' ) &&
-    // password: string
-    ( typeof arg.password === 'string' ) &&
+    // password?: string
+    ( typeof arg.password === 'undefined' || typeof arg.password === 'string' ) &&
 
   true
   );
@@ -189,8 +184,6 @@ export function isDeleteCategoryRequest(arg: any): arg is models.DeleteCategoryR
   typeof arg === 'object' &&
     // id: number
     ( typeof arg.id === 'number' ) &&
-    // storeId: number
-    ( typeof arg.storeId === 'number' ) &&
 
   true
   );
@@ -209,10 +202,8 @@ export function isDeleteProductRequest(arg: any): arg is models.DeleteProductReq
   return (
   arg != null &&
   typeof arg === 'object' &&
-    // 'path:omitempty': number
-    ( typeof arg['path:omitempty'] === 'number' ) &&
-    // storeId: number
-    ( typeof arg.storeId === 'number' ) &&
+    // id: number
+    ( typeof arg.id === 'number' ) &&
 
   true
   );
@@ -257,36 +248,16 @@ export function isGetAllProductsResponse(arg: any): arg is models.GetAllProducts
   );
   }
 
-export function isGetCategoryByIdResponse(arg: any): arg is models.GetCategoryByIdResponse {
+export function isGetAllUsersResponse(arg: any): arg is models.GetAllUsersResponse {
   return (
   arg != null &&
   typeof arg === 'object' &&
-    // category: Category
-    ( isCategory(arg.category) ) &&
-
-  true
-  );
-  }
-
-export function isGetCategoryBySlugResponse(arg: any): arg is models.GetCategoryBySlugResponse {
-  return (
-  arg != null &&
-  typeof arg === 'object' &&
-    // category: Category
-    ( isCategory(arg.category) ) &&
-
-  true
-  );
-  }
-
-export function isGetProductResponse(arg: any): arg is models.GetProductResponse {
-  return (
-  arg != null &&
-  typeof arg === 'object' &&
-    // product: Product
-    ( isProduct(arg.product) ) &&
-    // storeId: number
-    ( typeof arg.storeId === 'number' ) &&
+    // totalPages: number
+    ( typeof arg.totalPages === 'number' ) &&
+    // totalRecords: number
+    ( typeof arg.totalRecords === 'number' ) &&
+    // users: User[]
+    ( (Array.isArray(arg.users) && arg.users.every((item: unknown) => isUser(item))) ) &&
 
   true
   );
@@ -343,22 +314,33 @@ export function isNewCustomer(arg: any): arg is models.NewCustomer {
   );
   }
 
+export function isPingResponse(arg: any): arg is models.PingResponse {
+  return (
+  arg != null &&
+  typeof arg === 'object' &&
+    // ping: string
+    ( typeof arg.ping === 'string' ) &&
+
+  true
+  );
+  }
+
 export function isPrice(arg: any): arg is models.Price {
   return (
   arg != null &&
   typeof arg === 'object' &&
     // amount: number
     ( typeof arg.amount === 'number' ) &&
-    // compareAtAmount: number
-    ( typeof arg.compareAtAmount === 'number' ) &&
-    // currency: string
-    ( typeof arg.currency === 'string' ) &&
+    // compareAtAmount?: number
+    ( typeof arg.compareAtAmount === 'undefined' || typeof arg.compareAtAmount === 'number' ) &&
+    // currency?: string
+    ( typeof arg.currency === 'undefined' || typeof arg.currency === 'string' ) &&
     // displayAmount: string
     ( typeof arg.displayAmount === 'string' ) &&
-    // displayCompareAtAmount: string
-    ( typeof arg.displayCompareAtAmount === 'string' ) &&
-    // id: number
-    ( typeof arg.id === 'number' ) &&
+    // displayCompareAtAmount?: string
+    ( typeof arg.displayCompareAtAmount === 'undefined' || typeof arg.displayCompareAtAmount === 'string' ) &&
+    // id?: number
+    ( typeof arg.id === 'undefined' || typeof arg.id === 'number' ) &&
 
   true
   );
@@ -368,24 +350,24 @@ export function isProduct(arg: any): arg is models.Product {
   return (
   arg != null &&
   typeof arg === 'object' &&
-    // description: string
-    ( typeof arg.description === 'string' ) &&
+    // description?: string
+    ( typeof arg.description === 'undefined' || typeof arg.description === 'string' ) &&
     // id: number
     ( typeof arg.id === 'number' ) &&
-    // metaDescription: string
-    ( typeof arg.metaDescription === 'string' ) &&
-    // metaKeywords: string
-    ( typeof arg.metaKeywords === 'string' ) &&
-    // metaTitle: string
-    ( typeof arg.metaTitle === 'string' ) &&
+    // metaDescription?: string
+    ( typeof arg.metaDescription === 'undefined' || typeof arg.metaDescription === 'string' ) &&
+    // metaKeywords?: string
+    ( typeof arg.metaKeywords === 'undefined' || typeof arg.metaKeywords === 'string' ) &&
+    // metaTitle?: string
+    ( typeof arg.metaTitle === 'undefined' || typeof arg.metaTitle === 'string' ) &&
     // name: string
     ( typeof arg.name === 'string' ) &&
-    // shortDescription: string
-    ( typeof arg.shortDescription === 'string' ) &&
+    // shortDescription?: string
+    ( typeof arg.shortDescription === 'undefined' || typeof arg.shortDescription === 'string' ) &&
     // slug: string
     ( typeof arg.slug === 'string' ) &&
-    // variants: Variant[]
-    ( (Array.isArray(arg.variants) && arg.variants.every((item: unknown) => isVariant(item))) ) &&
+    // variants?: Variant[]
+    ( typeof arg.variants === 'undefined' || (Array.isArray(arg.variants) && arg.variants.every((item: unknown) => isVariant(item))) ) &&
 
   true
   );
@@ -412,19 +394,6 @@ export function isUpdateCategoryRequest(arg: any): arg is models.UpdateCategoryR
     ( isCategory(arg.category) ) &&
     // id: number
     ( typeof arg.id === 'number' ) &&
-    // storeId: number
-    ( typeof arg.storeId === 'number' ) &&
-
-  true
-  );
-  }
-
-export function isUpdateCategoryResponse(arg: any): arg is models.UpdateCategoryResponse {
-  return (
-  arg != null &&
-  typeof arg === 'object' &&
-    // category: Category
-    ( isCategory(arg.category) ) &&
 
   true
   );
@@ -434,23 +403,23 @@ export function isUpdateProductRequest(arg: any): arg is models.UpdateProductReq
   return (
   arg != null &&
   typeof arg === 'object' &&
-    // 'path:omitempty': number
-    ( typeof arg['path:omitempty'] === 'number' ) &&
-    // 'product:omitempty': Product
-    ( isProduct(arg['product:omitempty']) ) &&
-    // storeId: number
-    ( typeof arg.storeId === 'number' ) &&
+    // path: number
+    ( typeof arg.path === 'number' ) &&
+    // product: Product
+    ( isProduct(arg.product) ) &&
 
   true
   );
   }
 
-export function isUpdateProductResponse(arg: any): arg is models.UpdateProductResponse {
+export function isUploadAssetRequest(arg: any): arg is models.UploadAssetRequest {
   return (
   arg != null &&
   typeof arg === 'object' &&
-    // 'product:omitempty': Product
-    ( isProduct(arg['product:omitempty']) ) &&
+    // productId: number
+    ( typeof arg.productId === 'number' ) &&
+    // variantId: number
+    ( typeof arg.variantId === 'number' ) &&
 
   true
   );
@@ -468,8 +437,8 @@ export function isUser(arg: any): arg is models.User {
     ( typeof arg.id === 'number' ) &&
     // lastName: string
     ( typeof arg.lastName === 'string' ) &&
-    // password: string
-    ( typeof arg.password === 'string' ) &&
+    // password?: string
+    ( typeof arg.password === 'undefined' || typeof arg.password === 'string' ) &&
 
   true
   );
@@ -494,8 +463,8 @@ export function isUserLoginResponse(arg: any): arg is models.UserLoginResponse {
   typeof arg === 'object' &&
     // jwt: JwtToken
     ( isJwtToken(arg.jwt) ) &&
-    // status: ResponseStatus
-    ( isResponseStatus(arg.status) ) &&
+    // success: boolean
+    ( typeof arg.success === 'boolean' ) &&
     // user: User
     ( isUser(arg.user) ) &&
 
@@ -507,22 +476,22 @@ export function isVariant(arg: any): arg is models.Variant {
   return (
   arg != null &&
   typeof arg === 'object' &&
-    // depth: number
-    ( typeof arg.depth === 'number' ) &&
-    // height: number
-    ( typeof arg.height === 'number' ) &&
+    // depth?: number
+    ( typeof arg.depth === 'undefined' || typeof arg.depth === 'number' ) &&
+    // height?: number
+    ( typeof arg.height === 'undefined' || typeof arg.height === 'number' ) &&
     // id: number
     ( typeof arg.id === 'number' ) &&
     // isDefault: boolean
     ( typeof arg.isDefault === 'boolean' ) &&
-    // price: Price
-    ( isPrice(arg.price) ) &&
+    // price?: Price
+    ( typeof arg.price === 'undefined' || isPrice(arg.price) ) &&
     // sku: string
     ( typeof arg.sku === 'string' ) &&
-    // weight: number
-    ( typeof arg.weight === 'number' ) &&
-    // width: number
-    ( typeof arg.width === 'number' ) &&
+    // weight?: number
+    ( typeof arg.weight === 'undefined' || typeof arg.weight === 'number' ) &&
+    // width?: number
+    ( typeof arg.width === 'undefined' || typeof arg.width === 'number' ) &&
 
   true
   );

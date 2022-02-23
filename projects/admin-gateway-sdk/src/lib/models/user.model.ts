@@ -5,5 +5,5 @@ export interface User {
   firstName: string;  //  first name
   id: number;  //  user id
   lastName: string;  //  last name
-  password: string;  //  password
+  password?: string;  //  password
 }

@@ -1,12 +1,11 @@
 /* tslint:disable */
 import {
   JwtToken,
-  ResponseStatus,
   User,
 } from '.';
 
 export interface UserLoginResponse {
   jwt: JwtToken;  //  JwtToken object
-  status: ResponseStatus;  //  a ResponseStatus object
+  success: boolean;  //  success bool
   user: User;  //  User object
 }
