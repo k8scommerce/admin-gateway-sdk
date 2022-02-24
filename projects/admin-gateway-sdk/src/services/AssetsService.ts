@@ -22,7 +22,7 @@ export class AssetsService {
      * @param productId product id
      * @param variantId variant id
      * @param kind
-     * @param body
+     * @param body ,, Assets,,
      * @returns Asset A successful response.
      * @throws ApiError
      */

@@ -24,7 +24,7 @@ export class ProductsService {
     /**
      * Create Product
      * creates a product
-     * @param body
+     * @param body  create product
      * @returns Product A successful response.
      * @throws ApiError
      */
@@ -99,7 +99,7 @@ export class ProductsService {
      * Delete Product
      * delete a product
      * @param id product id
-     * @param body
+     * @param body  delete product
      * @returns DeleteProductResponse A successful response.
      * @throws ApiError
      */
@@ -121,7 +121,7 @@ export class ProductsService {
      * Update Product
      * updates a product
      * @param id product id
-     * @param body
+     * @param body  update product
      * @returns Product A successful response.
      * @throws ApiError
      */
@@ -153,7 +153,7 @@ export class ProductsService {
         categoryId: number,
         currentPage: number,
         pageSize: number,
-        sortOn: string,
+        sortOn?: string,
     ): Observable<GetProductsByCategoryIdResponse> {
         return __request(OpenAPI, this.http, {
             method: 'GET',
@@ -182,8 +182,8 @@ export class ProductsService {
     public getAllProducts(
         currentPage: number,
         pageSize: number,
-        filter: string,
-        sortOn: string,
+        filter?: string,
+        sortOn?: string,
     ): Observable<GetAllProductsResponse> {
         return __request(OpenAPI, this.http, {
             method: 'GET',

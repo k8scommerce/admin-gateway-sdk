@@ -9,11 +9,11 @@ export type UserLoginResponse = {
     /**
      *  JwtToken object
      */
-    jwt: JwtToken;
+    jwt?: JwtToken;
     /**
      *  User object
      */
-    user: User;
+    user?: User;
     /**
      *  success bool
      */

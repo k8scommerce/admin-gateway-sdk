@@ -10,5 +10,5 @@ export type ResponseStatus = {
     /**
      *  status message
      */
-    statusMessage: string;
+    statusMessage?: string;
 };

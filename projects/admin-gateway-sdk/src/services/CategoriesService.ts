@@ -34,7 +34,7 @@ export class CategoriesService {
         storeId: string,
         currentPage: number,
         pageSize: number,
-        sortOn: string,
+        sortOn?: string,
     ): Observable<GetAllCategoriesResponse> {
         return __request(OpenAPI, this.http, {
             method: 'GET',
@@ -53,7 +53,7 @@ export class CategoriesService {
     /**
      * Create Category
      * creates a category
-     * @param body
+     * @param body  create category
      * @returns Category A successful response.
      * @throws ApiError
      */
@@ -109,7 +109,7 @@ export class CategoriesService {
      * Delete Category
      * deletes a category
      * @param id category id
-     * @param body
+     * @param body  delete category
      * @returns DeleteCategoryResponse A successful response.
      * @throws ApiError
      */
@@ -131,7 +131,7 @@ export class CategoriesService {
      * Update Category
      * updates a category
      * @param id category id
-     * @param body
+     * @param body  update category
      * @returns Category A successful response.
      * @throws ApiError
      */

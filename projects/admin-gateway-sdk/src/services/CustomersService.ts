@@ -21,7 +21,7 @@ export class CustomersService {
     /**
      * Create Customer
      * creates a new customer
-     * @param body
+     * @param body  create customer
      * @returns CreateCustomerResponse A successful response.
      * @throws ApiError
      */
@@ -38,7 +38,7 @@ export class CustomersService {
     /**
      * Login
      * login for customers
-     * @param body
+     * @param body , requests & responses,, login
      * @returns CustomerLoginResponse A successful response.
      * @throws ApiError
      */

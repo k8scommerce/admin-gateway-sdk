@@ -8,41 +8,41 @@ export type Asset = {
     /**
      *  asset id
      */
-    id: number;
+    id?: number;
     /**
      *  product id
      */
-    productId: number;
+    productId?: number;
     /**
      *  variant id
      */
-    variantId: number;
+    variantId?: number;
     /**
      *  asset name
      */
-    name: string;
+    name?: string;
     /**
-     *  dislpay name
+     *  display name
      */
-    displayName: string;
+    displayName?: string;
     /**
      *  full, public access url
      */
-    url: string;
+    url?: string;
     /**
      *  asset kind (image|document|audio|video|archive)
      */
-    kind: string;
+    kind?: string;
     /**
      *  content type (mime type)
      */
-    contentType: string;
+    contentType?: string;
     /**
      *  sort order
      */
-    sortOrder: number;
+    sortOrder?: number;
     /**
-     *   ImageSize object
+     *  ImageSize object
      */
-    sizes: Array<ImageSize>;
+    sizes?: Array<ImageSize>;
 };
