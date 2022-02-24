@@ -20,21 +20,21 @@ export type Variant = {
     /**
      *  variant weight. used in calculating shipping
      */
-    weight?: number;
+    weight: number;
     /**
      *  variant height. used in calculating shipping
      */
-    height?: number;
+    height: number;
     /**
      *  variant width. used in calculating shipping
      */
-    width?: number;
+    width: number;
     /**
      *  variant depth. used in calculating shipping
      */
-    depth?: number;
+    depth: number;
     /**
      *  variant Price object
      */
-    price?: Price;
+    price: Price;
 };

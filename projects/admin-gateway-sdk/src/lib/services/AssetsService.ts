@@ -21,6 +21,7 @@ export class AssetsService {
      * uploads an image, document, audio, video or archive asset
      * @param productId product id
      * @param variantId variant id
+     * @param kind
      * @param body
      * @returns Asset A successful response.
      * @throws ApiError
@@ -28,14 +29,16 @@ export class AssetsService {
     public upload(
         productId: string,
         variantId: string,
+        kind: string,
         body: UploadAssetRequest,
     ): Observable<Asset> {
         return __request(OpenAPI, this.http, {
             method: 'POST',
-            url: '/v1/asset/{productId}/{variantId}',
+            url: '/v1/asset/{productId}/{variantId}/{kind}',
             path: {
                 'productId': productId,
                 'variantId': variantId,
+                'kind': kind,
             },
             body: body,
         });

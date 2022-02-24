@@ -34,7 +34,7 @@ export class CategoriesService {
         storeId: string,
         currentPage: number,
         pageSize: number,
-        sortOn?: string,
+        sortOn: string,
     ): Observable<GetAllCategoriesResponse> {
         return __request(OpenAPI, this.http, {
             method: 'GET',

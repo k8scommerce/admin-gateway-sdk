@@ -5,5 +5,5 @@
 export type GetAllCategoriesRequest = {
     currentPage: number;
     pageSize: number;
-    sortOn?: string;
+    sortOn: string;
 };

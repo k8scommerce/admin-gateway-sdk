@@ -34,6 +34,7 @@ export type { GetProductBySkuRequest } from './models/GetProductBySkuRequest';
 export type { GetProductBySlugRequest } from './models/GetProductBySlugRequest';
 export type { GetProductsByCategoryIdRequest } from './models/GetProductsByCategoryIdRequest';
 export type { GetProductsByCategoryIdResponse } from './models/GetProductsByCategoryIdResponse';
+export type { ImageSize } from './models/ImageSize';
 export type { JwtToken } from './models/JwtToken';
 export type { NewCustomer } from './models/NewCustomer';
 export type { PermissionGroup } from './models/PermissionGroup';

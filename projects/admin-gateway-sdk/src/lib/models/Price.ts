@@ -6,7 +6,7 @@ export type Price = {
     /**
      *  price id
      */
-    id?: number;
+    id: number;
     /**
      *  price amount
      */
@@ -18,13 +18,13 @@ export type Price = {
     /**
      *  price compare amount
      */
-    compareAtAmount?: number;
+    compareAtAmount: number;
     /**
      *  price display compare amount
      */
-    displayCompareAtAmount?: string;
+    displayCompareAtAmount: string;
     /**
      *  price currency. example: USD, CAN, etc.
      */
-    currency?: string;
+    currency: string;
 };

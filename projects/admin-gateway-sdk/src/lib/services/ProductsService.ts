@@ -153,7 +153,7 @@ export class ProductsService {
         categoryId: number,
         currentPage: number,
         pageSize: number,
-        sortOn?: string,
+        sortOn: string,
     ): Observable<GetProductsByCategoryIdResponse> {
         return __request(OpenAPI, this.http, {
             method: 'GET',
@@ -182,8 +182,8 @@ export class ProductsService {
     public getAllProducts(
         currentPage: number,
         pageSize: number,
-        filter?: string,
-        sortOn?: string,
+        filter: string,
+        sortOn: string,
     ): Observable<GetAllProductsResponse> {
         return __request(OpenAPI, this.http, {
             method: 'GET',

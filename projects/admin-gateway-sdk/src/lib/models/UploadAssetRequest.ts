@@ -5,4 +5,5 @@
 export type UploadAssetRequest = {
     productId: number;
     variantId: number;
+    kind: string;
 };
