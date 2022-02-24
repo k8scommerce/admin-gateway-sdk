@@ -33,8 +33,8 @@ rm -rf $ROOT/../dist
 openapi --input $orig --output $dest --client angular
 
 # add the version number to the newly created package.json
-perl -pi -e "BEGIN{undef $/;} s/\"version\": \"\d+\.\d+\.\d+\",/\"version\": \"$version\",/smg" $ROOT/../package.json
-perl -pi -e "BEGIN{undef $/;} s/\"version\": \"\d+\.\d+\.\d+\",/\"version\": \"$version\",/smg" $ROOT/../projects/admin-gateway-sdk/package.json
+perl -pi -e "BEGIN{undef $/;} s/\"version\": \"(\d+\.\d+\.\d+|)\",/\"version\": \"$version\",/smg" $ROOT/../package.json
+perl -pi -e "BEGIN{undef $/;} s/\"version\": \"(\d+\.\d+\.\d+|)\",/\"version\": \"$version\",/smg" $ROOT/../projects/admin-gateway-sdk/package.json
 
 # remove the package-lock.json file
 rm -rf $ROOT/../package-lock.json
