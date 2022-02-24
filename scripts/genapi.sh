@@ -23,7 +23,7 @@ keywords_json=$(printf '%s\n' "${keywords[@]}" | jq -R . | jq -s .)
 # orig=https://raw.githubusercontent.com/k8scommerce/k8scommerce/main/docs/swagger/v1/admin.json
 # orig=https://raw.githubusercontent.com/k8scommerce/k8scommerce/feature/cart/docs/swagger/v1/admin.json
 orig=$ROOT/../../k8scommerce/docs/swagger/v1/admin.json
-dest=$ROOT/../projects/admin-gateway-sdk/src/lib/
+dest=$ROOT/../projects/admin-gateway-sdk/src/
 # # npm i ng-openapi-gen -g
 
 # remove the dist directory
