@@ -2,8 +2,6 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import type { ImageSize } from './ImageSize';
-
 export type Asset = {
     /**
      *  asset id
@@ -42,7 +40,7 @@ export type Asset = {
      */
     sortOrder?: number;
     /**
-     *  ImageSize object
+     *  map[tag:string]url:string
      */
-    sizes?: Array<ImageSize>;
+    sizes?: any;
 };
