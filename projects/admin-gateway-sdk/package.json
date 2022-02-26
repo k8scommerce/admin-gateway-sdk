@@ -7,7 +7,7 @@
     "k8scommerce",
     "admin gateway api"
   ],
-  "version": "1.0.38",
+  "version": "1.0.39",
   "peerDependencies": {
     "@angular/common": "^13.1.0",
     "@angular/core": "^13.1.0"
