@@ -23,7 +23,6 @@ export class CategoriesService {
     /**
      * Get All Categories
      * returns all categories belonging to a store
-     * @param storeId store id
      * @param currentPage current page number
      * @param pageSize number of records per page
      * @param sortOn
@@ -31,16 +30,14 @@ export class CategoriesService {
      * @throws ApiError
      */
     public getAllCategories(
-        storeId: string,
         currentPage: number,
         pageSize: number,
         sortOn?: string,
     ): Observable<GetAllCategoriesResponse> {
         return __request(OpenAPI, this.http, {
             method: 'GET',
-            url: '/v1/categories/{storeId}/{currentPage}/{pageSize}',
+            url: '/v1/categories/{currentPage}/{pageSize}',
             path: {
-                'storeId': storeId,
                 'currentPage': currentPage,
                 'pageSize': pageSize,
             },

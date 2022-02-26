@@ -28,9 +28,9 @@ export type Asset = {
      */
     url?: string;
     /**
-     *  asset kind (image|document|audio|video|archive)
+     *  asset kind (0=unknown|1=image|2=document|3=audio|4=video|5=archive)
      */
-    kind?: string;
+    kind?: number;
     /**
      *  content type (mime type)
      */
