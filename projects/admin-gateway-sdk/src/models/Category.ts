@@ -10,7 +10,7 @@ export type Category = {
     /**
      *  parent category id. references Category.Id
      */
-    parentId?: number;
+    parentId: number;
     /**
      *  slug name of the category
      */

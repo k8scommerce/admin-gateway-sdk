@@ -21,7 +21,6 @@ export type { DeleteCategoryRequest } from './models/DeleteCategoryRequest';
 export type { DeleteCategoryResponse } from './models/DeleteCategoryResponse';
 export type { DeleteProductRequest } from './models/DeleteProductRequest';
 export type { DeleteProductResponse } from './models/DeleteProductResponse';
-export type { GetAllCategoriesRequest } from './models/GetAllCategoriesRequest';
 export type { GetAllCategoriesResponse } from './models/GetAllCategoriesResponse';
 export type { GetAllProductsRequest } from './models/GetAllProductsRequest';
 export type { GetAllProductsResponse } from './models/GetAllProductsResponse';
