@@ -7,7 +7,7 @@
     "k8scommerce",
     "admin gateway api"
   ],
-  "version": "",
+  "version": "1.0.41",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
