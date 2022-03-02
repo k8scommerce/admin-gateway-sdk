@@ -6,5 +6,6 @@ export type GetProductsByCategoryIdRequest = {
     categoryId: number;
     currentPage: number;
     pageSize: number;
+    filter?: string;
     sortOn?: string;
 };

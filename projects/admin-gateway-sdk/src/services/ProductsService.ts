@@ -145,6 +145,7 @@ export class ProductsService {
      * @param categoryId category id
      * @param currentPage current page number
      * @param pageSize number of records per page
+     * @param filter
      * @param sortOn
      * @returns GetProductsByCategoryIdResponse A successful response.
      * @throws ApiError
@@ -153,6 +154,7 @@ export class ProductsService {
         categoryId: number,
         currentPage: number,
         pageSize: number,
+        filter?: string,
         sortOn?: string,
     ): Observable<GetProductsByCategoryIdResponse> {
         return __request(OpenAPI, this.http, {
@@ -164,6 +166,7 @@ export class ProductsService {
                 'pageSize': pageSize,
             },
             query: {
+                'filter': filter,
                 'sortOn': sortOn,
             },
         });
