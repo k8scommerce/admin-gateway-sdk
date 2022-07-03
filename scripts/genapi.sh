@@ -30,7 +30,7 @@ dest=$ROOT/../projects/admin-gateway-sdk/src/
 rm -rf $ROOT/../dist
 
 # generate for angular
-openapi --input $orig --output $dest --client angular
+openapi-generator generate -i $orig -o $dest -g typescript-angular
 
 # add the version number to the newly created package.json
 perl -pi -e "BEGIN{undef $/;} s/\"version\": \"(\d+\.\d+\.\d+|)\",/\"version\": \"$version\",/smg" $ROOT/../package.json
