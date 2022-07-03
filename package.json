@@ -7,7 +7,7 @@
     "k8scommerce",
     "admin gateway api"
   ],
-  "version": "1.0.43",
+  "version": "1.0.44",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -43,5 +43,13 @@
     "karma-jasmine-html-reporter": "~1.7.0",
     "ng-packagr": "^13.0.0",
     "typescript": "~4.5.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/k8scommerce/admin-gateway-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/k8scommerce/admin-gateway-sdk/issues"
+  },
+  "homepage": "https://github.com/k8scommerce/admin-gateway-sdk#readme"
 }
