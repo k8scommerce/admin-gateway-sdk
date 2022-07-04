@@ -46,6 +46,7 @@ model/getAllUsersResponse.ts
 model/getCustomerResponse.ts
 model/getProductsByCategoryIdRequest.ts
 model/getProductsByCategoryIdResponse.ts
+model/getUserByIdResponse.ts
 model/getUserResponse.ts
 model/item.ts
 model/jwtToken.ts

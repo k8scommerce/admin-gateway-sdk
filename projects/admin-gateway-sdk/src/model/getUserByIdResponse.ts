@@ -13,7 +13,7 @@ import { User } from './user';
 import { PermissionGroup } from './permissionGroup';
 
 
-export interface GetUserResponse { 
+export interface GetUserByIdResponse { 
     user?: User;
     /**
      *  User object

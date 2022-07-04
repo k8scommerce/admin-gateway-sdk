@@ -30,6 +30,7 @@ export * from './getAllUsersResponse';
 export * from './getCustomerResponse';
 export * from './getProductsByCategoryIdRequest';
 export * from './getProductsByCategoryIdResponse';
+export * from './getUserByIdResponse';
 export * from './getUserResponse';
 export * from './item';
 export * from './jwtToken';
