@@ -3,9 +3,9 @@
 version=$1
 
 function join {
-    local IFS="$1"
-    shift
-    echo "$*"
+  local IFS="$1"
+  shift
+  echo "$*"
 }
 
 # get the root path of the directory this file resides
@@ -14,14 +14,12 @@ function join {
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 
 keywords=(
-    "k8scommerce"
-    "admin gateway api"
+  "k8scommerce"
+  "admin gateway api"
 )
 keywords_json=$(printf '%s\n' "${keywords[@]}" | jq -R . | jq -s .)
 
 # set the original and destination vars
-# orig=https://raw.githubusercontent.com/k8scommerce/k8scommerce/main/docs/swagger/v1/admin.json
-# orig=https://raw.githubusercontent.com/k8scommerce/k8scommerce/feature/cart/docs/swagger/v1/admin.json
 orig=$ROOT/../../k8scommerce/docs/swagger/v1/admin.json
 dest=$ROOT/../projects/admin-gateway-sdk/src/
 # # npm i ng-openapi-gen -g
