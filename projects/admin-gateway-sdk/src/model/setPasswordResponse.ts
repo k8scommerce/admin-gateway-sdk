@@ -13,7 +13,7 @@ import { JwtToken } from './jwtToken';
 import { User } from './user';
 
 
-export interface UserLoginResponse { 
+export interface SetPasswordResponse { 
     jwt?: JwtToken;
     user?: User;
     /**

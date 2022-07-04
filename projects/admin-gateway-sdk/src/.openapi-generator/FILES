@@ -29,10 +29,14 @@ model/createCategoryRequest.ts
 model/createCustomerRequest.ts
 model/createCustomerResponse.ts
 model/createProductRequest.ts
+model/createUserRequest.ts
+model/createUserResponse.ts
 model/customer.ts
 model/customerAccount.ts
 model/customerLoginRequest.ts
 model/customerLoginResponse.ts
+model/forgotPasswordRequest.ts
+model/forgotPasswordResponse.ts
 model/generateStoreKeyTokenResponse.ts
 model/getAllCategoriesResponse.ts
 model/getAllProductsRequest.ts
@@ -42,6 +46,7 @@ model/getAllUsersResponse.ts
 model/getCustomerResponse.ts
 model/getProductsByCategoryIdRequest.ts
 model/getProductsByCategoryIdResponse.ts
+model/getUserResponse.ts
 model/item.ts
 model/jwtToken.ts
 model/models.ts
@@ -52,6 +57,10 @@ model/pingResponse.ts
 model/price.ts
 model/product.ts
 model/removeItemRequest.ts
+model/resendConfirmEmailRequest.ts
+model/resendConfirmEmailResponse.ts
+model/setPasswordRequest.ts
+model/setPasswordResponse.ts
 model/similarProducts.ts
 model/store.ts
 model/updateCategoryRequest.ts
@@ -59,9 +68,13 @@ model/updateCustomerDetailRequest.ts
 model/updateItemQuantityRequest.ts
 model/updateProductRequest.ts
 model/updateStatusRequest.ts
+model/updateUserRequest.ts
+model/updateUserResponse.ts
 model/user.ts
 model/userLoginRequest.ts
 model/userLoginResponse.ts
 model/usersPermissionGroups.ts
 model/variant.ts
+model/verifyEmailAddressRequest.ts
+model/verifyEmailAddressResponse.ts
 variables.ts

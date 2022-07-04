@@ -9,16 +9,16 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { JwtToken } from './jwtToken';
-import { User } from './user';
 
 
-export interface UserLoginResponse { 
-    jwt?: JwtToken;
-    user?: User;
+export interface SetPasswordRequest { 
     /**
-     *  success bool
+     *  user verification code
      */
-    success: boolean;
+    code: string;
+    /**
+     *  password
+     */
+    password: string;
 }
 

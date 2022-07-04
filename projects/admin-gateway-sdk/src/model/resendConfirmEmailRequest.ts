@@ -9,16 +9,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { JwtToken } from './jwtToken';
-import { User } from './user';
 
 
-export interface UserLoginResponse { 
-    jwt?: JwtToken;
-    user?: User;
+export interface ResendConfirmEmailRequest { 
     /**
-     *  success bool
+     *  email address, unique to each store id
      */
-    success: boolean;
+    email: string;
 }
 

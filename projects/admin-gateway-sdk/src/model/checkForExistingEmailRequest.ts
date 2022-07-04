@@ -13,7 +13,7 @@
 
 export interface CheckForExistingEmailRequest { 
     /**
-     *  Customer object
+     *  User object
      */
     email: string;
 }
