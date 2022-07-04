@@ -11,11 +11,16 @@
  */
 import { JwtToken } from './jwtToken';
 import { User } from './user';
+import { PermissionGroup } from './permissionGroup';
 
 
 export interface UserLoginResponse { 
     jwt?: JwtToken;
     user?: User;
+    /**
+     *  User object
+     */
+    permission_groups?: Array<PermissionGroup>;
     /**
      *  success bool
      */
