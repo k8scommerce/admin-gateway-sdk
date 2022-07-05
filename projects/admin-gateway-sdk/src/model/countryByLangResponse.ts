@@ -12,6 +12,6 @@
 
 
 export interface CountryByLangResponse { 
-    langs?: string;
+    langs?: Array<string>;
 }
 
