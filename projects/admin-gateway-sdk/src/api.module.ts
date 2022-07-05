@@ -6,6 +6,7 @@ import { ApiService } from './api/api.service';
 import { AssetsService } from './api/assets.service';
 import { CartService } from './api/cart.service';
 import { CategoriesService } from './api/categories.service';
+import { CountryService } from './api/country.service';
 import { CustomersService } from './api/customers.service';
 import { ProductsService } from './api/products.service';
 import { StoreService } from './api/store.service';
