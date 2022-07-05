@@ -26,6 +26,7 @@ model/category.ts
 model/categoryPair.ts
 model/checkForExistingEmailRequest.ts
 model/checkForExistingEmailResponse.ts
+model/countryByLangResponse.ts
 model/createCategoryRequest.ts
 model/createCustomerRequest.ts
 model/createCustomerResponse.ts

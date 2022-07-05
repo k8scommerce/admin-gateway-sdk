@@ -9,6 +9,7 @@ export * from './category';
 export * from './categoryPair';
 export * from './checkForExistingEmailRequest';
 export * from './checkForExistingEmailResponse';
+export * from './countryByLangResponse';
 export * from './createCategoryRequest';
 export * from './createCustomerRequest';
 export * from './createCustomerResponse';
